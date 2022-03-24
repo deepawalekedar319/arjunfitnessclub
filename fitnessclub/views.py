@@ -1,4 +1,3 @@
-from asyncio.windows_events import NULL
 from django.shortcuts import render
 from fitnessclub.models import AllImages, MoreImages, MyImages
 from fitnessclub import forms
