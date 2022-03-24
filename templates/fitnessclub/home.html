@@ -1,0 +1,478 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arjun Fitness Club</title>
+    <link rel="icon" href="/media/{{image}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+          background-color: black;
+        }        
+        ::-webkit-scrollbar {
+          /* background-color: red; */
+          color: red;
+        }
+        ::-webkit-scrollbar-track {
+          box-shadow: inset 0 0 5px black; 
+          border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+          background: red; 
+          border-radius: 10px;
+        }
+        .topnav {
+          overflow: hidden;
+          background: black !important;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          z-index: 1;  
+        }        
+        .topnav a {
+            margin-left: 5%;
+            float: left;
+            display: block;
+            color: #faf2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        
+        .topnav a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+        
+        /* .topnav a.active {
+          background-color: #04AA6D;
+          color: white;
+        } */
+        
+        .topnav .icon {
+          display: none;
+        }
+        
+        @media screen and (max-width: 600px) {
+          .topnav a:not(:first-child) {
+              display: none;}
+          .topnav a.icon {
+            float: right;
+            display: block;
+          }
+        }
+        
+        @media screen and (max-width: 600px) {
+          .topnav.responsive {
+              position: fixed;
+            }
+          .topnav.responsive .icon {
+            position: fixed;
+            right: 0;
+            top: 0;
+          }
+          .topnav.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+          }
+        }
+        .topnav .logo {
+            margin-right: 20%;
+            margin-left: 2%;
+            padding: 0% 0%;
+        }
+        
+        .topnav .logo img {
+            width: 100px;
+            height: 50px;
+        }
+        #home{
+            width: auto;
+            background-image: url("/media/{{homePage}}");
+            padding-top: 20%;
+            padding-left: 12%;
+            /* padding-right: 10%; */
+            padding-bottom: 20%;
+            background-size: cover;
+        }
+        #home .content h3{
+            color: white;
+            font-style: italic;
+            /* padding-top: 8%; */
+
+        }
+        #about{
+            /* width: auto; */
+            color: aliceblue;
+            display: flex;
+            margin-right: 2%;
+        }
+        #about img{
+          width: 50%;
+          height: 50%;
+          margin-left: 4%;
+          border-bottom: 9px solid red;
+          background: #cccaca;
+          border-left: 5px solid red;
+          border-radius: 10px;
+          transition: border-right 0.5s, border-top 0.5s;
+        }
+        #about img:hover{
+          border-right: 9px solid red;
+          background: #cccaca;
+          border-top: 5px solid red;
+          border-left: 0px;
+          border-bottom: 0px;
+        }
+        #about .content{
+          padding-left: 5%;
+          margin-top: 2%;
+          text-align: justify;
+        }
+        #about .content h1{
+          border-bottom:  solid red;
+          padding-bottom: 2%;
+        }
+        #about .content p{
+          width: 90%;
+          font-size: large;
+        }
+        .more h1{
+          color: white;
+          border-bottom: solid red; 
+          width: 20%;
+          margin-left: 4%;
+        }
+        #service h1{
+          color: white;
+          border-bottom: solid red;
+          border-left: solid red;
+          text-align: center;
+          margin: 2%;
+        }
+        #service h1:hover{
+          border-top: solid red;
+          border-right: solid red;
+          border-left: 0px;
+          border-bottom: 0px;          
+        }
+         #service .servicesContent p{
+           color: white;
+           padding-top: 2%;
+           margin-left: 3%;
+           margin-right: 3%;
+           font-size: 18px;
+           letter-spacing: 1.2px;
+           font-family: Arial, Helvetica, sans-serif;
+           text-align: justify;
+         }
+        #certificate h1{
+          color: white;
+          border-bottom: solid red;
+          border-left: solid red;
+          text-align: center;
+          margin: 2%;
+        }
+        #certificate h1:hover{
+          border-top: solid red;
+          border-right: solid red;
+          border-left: 0px;
+          border-bottom: 0px;          
+        }
+        .certificateList td{
+          color: white;
+          text-align: center;
+          padding-bottom: 12%;
+          letter-spacing: 0.1em;
+          line-height: 10px;
+        }
+        #contact{
+            width: auto;
+            background-color: #cccaca;
+        }
+        /* #contact label{
+
+        } */
+        #contact input{
+          font-size: 16px;
+          height: 6%;
+          border-radius: 5px;
+          margin-left: 4%;
+          border:0.3px solid aliceblue;
+          width: 90%;
+          /* box-shadow: 0px 0px 12px 0px green; */
+         }
+        #contact textarea{
+          margin-left: 4%;
+          font-size: 16px;
+          width: 90%;
+          border-radius: 5px;
+          animation: rotateIt 1s linear 1;
+        }
+        #contact input:hover,textarea:hover{
+            box-shadow: 0px 0px 12px 0px green;
+        }
+        #submitButton{
+            width:90%;
+            background-color:green;
+        }
+        #homeButton{
+            -webkit-transition: all 2s ease;
+            transition: all 2s ease;         
+        } 
+
+        #homeButton:hover {
+           max-height: 200px;
+           background-color: black;
+        }
+        #contact .icons{
+          margin-left: 4%;
+        }
+        .moreImages .container{ 
+          text-align: center;
+        }
+        .moreImages .container img{
+          padding: 2%;
+          width: 90%;
+          margin-bottom: 2%;
+          transition: width 1s, height 1s;
+        }      
+        .moreImages .container img:hover{
+          width: 100%;
+          height: 100%;
+          /* box-shadow: 0px 2px 10px 0px red; */
+        }
+        .more{
+          margin-left: 2%;
+        }
+        .more img{
+          padding: 2%;
+          /* height: 50%; */
+        }
+        .outer-grid {
+   display: flex;
+   flex-wrap: wrap;
+   padding: 0 4px;
+}
+.inner-grid {
+   flex: 25%;
+   max-width: 25%;
+   padding: 0 4px;
+}
+.inner-grid img {
+   margin-top: 8px;
+   width: 100%;
+   padding: 10px;
+}
+@media screen and (max-width: 800px) {
+   .inner-grid {
+      flex: 50%;
+      max-width: 50%;
+   }
+}
+@media screen and (max-width: 600px) {
+   .inner-grid {
+      flex: 100%;
+      max-width: 100%;
+   }
+}
+
+        </style>
+        </head>
+        <body>        
+        <div class="topnav" id="myTopnav">
+            <a href="/" class="logo"><img src="/media/{{image}}" alt=""></a>
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About me</a>
+            <a href="#service">Services</a>
+            <a href="#certificate">Certificates</a>            
+            <a href="#contact">Contact</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div> 
+        <div id="home"><br><br>
+            <div class="content">
+                <h3><strong> Be Strong, Be Fit </strong></h3>
+                <h1>Make Yourself Stronger</h1>
+                <h1>Than Your Excuses.</h1> <br>
+                <a href="#contact" id="homeButton" class="btn btn-lg btn-danger">Get Started</a>
+            </div>    
+        </div>  <br><br><br>
+        <div id="about"> <br><br><br>
+            <img src="/media/{{about}}" alt="no image">
+            <div class="content">
+              <h1>About Me</h1> <br>
+              <p>Hi everyone myself <strong><u><span style="color: red;"> Arjun Singh</span></u></strong> I'm the head coach of <strong><u><span style="color: red;">DL Fitness Zone</span></u></strong> and founder of <strong><u><span style="color: red;">ArjunFitnessClub</span></u></strong>. My passion is to help people, change their lives in the simplest and the most realistic way possible. I believe everyone deserves the right for good health and to be happy themselves inside and out. Getting fit and healthy is not at all a difficult task, but its all about patience. <br><br>I have <strong><u><span style="color: red;">10 years</span></u></strong> of experience in fitness industry. I have trained number of clients that includes Serial Actors, Wrestler, Fitness Models, BodyBuilding Competitions, Physique Athletes, Advertising Models, Rampwalk Models ...etc</p>
+            </div>            
+        </div>   <br><br>
+        <div class="more">
+          <h1>More </h1>
+          <div class="outer-grid">
+            <div class="inner-grid">
+              <img src="/media/{{pic1}}" alt="">   
+              <img src="/media/{{pic5}}" alt="">  
+              <img src="/media/{{pic13}}" alt="">  
+              <img src="/media/{{pic10}}" alt="">
+              <img src="/media/{{pic8}}" alt=""> 
+            </div>
+            <div class="inner-grid">
+              <img src="/media/{{pic2}}" alt="">     
+              <img src="/media/{{pic17}}" alt="">  
+              <img src="/media/{{pic12}}" alt="">  
+              <img src="/media/{{pic9}}" alt="">
+              <img src="/media/{{pic7}}" alt=""> 
+              <img src="/media/{{pic6}}" alt=""> 
+            </div>
+            <div class="inner-grid">
+              <img src="/media/{{pic4}}" alt="">   
+              <img src="/media/{{pic14}}" alt="">  
+              <img src="/media/{{pic16}}" alt=""> 
+              <img src="/media/{{pic62}}" alt=""> 
+            </div>
+            <div class="inner-grid">
+              <img src="/media/{{pic3}}" alt="">  
+              <img src="/media/{{pic15}}" alt="">  
+              <img src="/media/{{pic11}}" alt="">  
+              <img src="/media/{{pic18}}" alt="">  
+              <img src="/media/{{pic61}}" alt="">  
+            </div>
+            </div>
+        </div>
+        <div id="service"> <br><br><br>
+          <h1>Services</h1>
+          <div class="servicesContent">
+            <p>I have a natural ability to coach and motivate people to understand and trust in my methods and from this, I get and expect amazing results. Along with the skills I have developed to be able to design effective goal specific training programs and pinpeinf flaws with in a clients lift style habits, correct them in a way that is both easy to understand and manageable within their current needs and circumstances.</p>
+          </div>
+          <div class="moreImages">
+            <div class="container">
+              <div class="row">
+                <div class="col"><a href="/media/{{image2}}" target="_blank"><img src="/media/{{image2}}" alt=""></a></div>
+                <div class="col"><a href="/media/{{image3}}" target="_blank"><img src="/media/{{image3}}" alt=""></a></div>
+                <div class="col"><a href="/media/{{image4}}" target="_blank"><img src="/media/{{image4}}" alt=""></a></div>
+                <div class="row">
+                  <div class="col"><a href="/media/{{image5}}" target="_blank"><img src="/media/{{image5}}" alt=""></a></div>
+                  <div class="col"><a href="/media/{{image6}}" target="_blank"><img src="/media/{{image6}}" alt=""></a></div>
+                  <div class="col"><a href="/media/{{image7}}" target="_blank"><img src="/media/{{image7}}" alt="" style="height: 99%;"></a></div>
+                </div>
+                <div class="row">
+                  <div class="col"><a href="/media/{{image8}}" target="_blank"><img src="/media/{{image8}}" alt=""></a></div>
+                  <div class="col"><a href="/media/{{image11}}" target="_blank"><img src="/media/{{image11}}" alt=""></a></div>
+                  <div class="col"><a href="/media/{{image12}}" target="_blank"><img src="/media/{{image12}}" alt="" ></a></div>
+                </div>
+                <div class="row">
+                  <div class="col"><a href="/media/{{image1}}" target="_blank"><img src="/media/{{image1}}" alt=""></a></div>
+                  <div class="col"><a href="/media/{{image10}}" target="/"><img src="/media/{{image10}}" alt=""></a></div>
+                </div>  
+              </div>
+            </div>
+          </div>     
+        </div> <br><br><br>
+        <div id="certificate">
+          <H1>Certification</H1> <br>
+          <div class="certificateList">
+            <table align="center">
+              <tr>
+                <td>ACE-BFY-Fitness Trainer</td>
+              </tr>
+              <tr>
+                <td>Personal Trainer</td>
+              </tr>
+              <tr>
+                <td>CPR, First AID</td>
+              </tr>
+              <tr>
+                <td>Nutritionist Adviser</td>
+              </tr>
+              <tr>
+                <td>Suppliment Adviser</td>
+              </tr>
+              <tr>
+                <td>Martial Arts Trainer</td>
+              </tr>
+              <tr>
+                <td>Pre and Post Rehab</td>
+              </tr>
+            </table>
+          </div>
+        </div>    <br><br>
+        <div id="contact"> <br><br>
+          <!-- <form method="post">
+            <input type="text" id="companyName" name="name" placeholder="Name "><br><br>
+            <input type="tel" id="number" name="number" placeholder="Phone Number"><br><br>
+            <input type="email" id="email" name="email" placeholder="Email "><br><br>
+            <textarea name="address" id="address" placeholder="Message" cols="103" rows="10"></textarea> <br><br>
+            {%csrf_token%}
+            <input type="submit" value="Send" id = "submitButton" class="btn-lg btn-success">
+          </form> <br> -->
+          <div class="reach" align="center" >
+            <table >
+              <tr>
+                <td>
+                  <h4>Phone :: </h4>
+                </td>
+                <td> <h4>8121858432</h4></td>
+              </tr><tr>
+                <td>
+                  <h4>Email :: </h4>
+                </td>
+                <td><h4>deepawalekedar319@gmail.com</h4></td>
+              </tr>
+            </table>
+          </div>
+          <br>
+          <div class="icons">
+            <a href="https://www.facebook.com/arjuntkd32" target="_blank"><i class="fa fa-facebook-square" style="font-size:48px;color: royalblue;"></i></a>
+            <a href="https://www.instagram.com/arjunfitnessclub/" target="_blank"><i class="fa fa-instagram" style="font-size:48px;"></i></a>
+            <a href="https://www.youtube.com/channel/UC6sOUMuaCYyceECUwqTf4Bw" target="_blank"><i class="fa fa-youtube-play" style="font-size:48px;color:red"></i></a> <br><br><br>
+          </div>
+          <div align="center">
+            <table>
+              <tr>
+                <td align="right">
+                  Develop and Hosted by :: 
+                </td>
+                <td>
+                  &nbsp;<a href="http://kedar-workspaces.herokuapp.com/" target="_blank">D. Kedar Singh</a></h6>
+                </td>
+              </tr>
+              <tr>
+                <td align="RIGHT">
+                  Phone :: 
+                </td>
+                <td>
+                  &nbsp;9618657739
+                </td>
+              </tr>
+              <tr>
+                <td align="right">
+                  Email :: 
+                </td>
+                <td>
+                  &nbsp;deepawalekedar319@gmail.com
+                </td>
+              </tr>
+            </table>
+           
+            <br><br>
+          </div>  
+        </div>   
+        <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+        </script>        
+        </body>
+        </html>
+        
