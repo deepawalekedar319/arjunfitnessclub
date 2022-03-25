@@ -133,7 +133,7 @@
         #about .content{
           padding-left: 5%;
           margin-top: 2%;
-          text-align: justify;
+          text-align: left;
         }
         #about .content h1{
           border-bottom:  solid red;
@@ -256,33 +256,43 @@
           /* height: 50%; */
         }
         .outer-grid {
-   display: flex;
-   flex-wrap: wrap;
-   padding: 0 4px;
-}
-.inner-grid {
-   flex: 25%;
-   max-width: 25%;
-   padding: 0 4px;
-}
-.inner-grid img {
-   margin-top: 8px;
-   width: 100%;
-   padding: 10px;
-}
-@media screen and (max-width: 800px) {
-   .inner-grid {
-      flex: 50%;
-      max-width: 50%;
-   }
-}
-@media screen and (max-width: 600px) {
-   .inner-grid {
-      flex: 100%;
-      max-width: 100%;
-   }
+          display: flex;
+          flex-wrap: wrap;
+          padding: 0 4px;
+        }
+        .inner-grid {
+          flex: 25%;
+          max-width: 25%;
+          padding: 0 4px;
+        }
+        .inner-grid img {
+          margin-top: 8px;
+          width: 100%;
+          padding: 10px;
+        }
+        @media screen and (max-width: 800px) {
+          .inner-grid {
+              flex: 50%;
+              max-width: 50%;
+          }
+        }
+        @media screen and (max-width: 600px) {
+          .inner-grid {
+              flex: 100%;
+              max-width: 100%;
+          }
+        }
+        @media screen and (min-width: 601px) {
+  div.example {
+    font-size: 80px;
+  }
 }
 
+@media screen and (max-width: 600px) {
+  div.example {
+    font-size: 30px;
+  }
+}  
         </style>
         </head>
         <body>        
@@ -309,7 +319,9 @@
             <img src="/media/{{about}}" alt="no image">
             <div class="content">
               <h1>About Me</h1> <br>
+              <div class="example">
               <p>Hi everyone myself <strong><u><span style="color: red;"> Arjun Singh</span></u></strong> I'm the head coach of <strong><u><span style="color: red;">DL Fitness Zone</span></u></strong> and founder of <strong><u><span style="color: red;">ArjunFitnessClub</span></u></strong>. My passion is to help people, change their lives in the simplest and the most realistic way possible. I believe everyone deserves the right for good health and to be happy themselves inside and out. Getting fit and healthy is not at all a difficult task, but its all about patience. <br><br>I have <strong><u><span style="color: red;">10 years</span></u></strong> of experience in fitness industry. I have trained number of clients that includes Serial Actors, Wrestler, Fitness Models, BodyBuilding Competitions, Physique Athletes, Advertising Models, Rampwalk Models ...etc</p>
+            </div>
             </div>            
         </div>   <br><br>
         <div class="more">
