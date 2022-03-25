@@ -3,7 +3,7 @@ from fitnessclub.models import AllImages, MoreImages, MyImages
 from fitnessclub import forms
 
 def homePage(request):
-    images = AllImages.objects.get(imageInformation="logo").image
+    images = AllImages.objects.get(imageInformation="logo").image 
     homePageImage = AllImages.objects.get(imageInformation="homepageImage").image
     aboutImage = AllImages.objects.get(imageInformation="aboutImage").image
     form = forms.EmailSendForm()

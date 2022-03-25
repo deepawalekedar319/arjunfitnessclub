@@ -1,1 +1,1 @@
-web: gunicorn ArjunFitnessClub.wsgi:application --log-file -
+web: gunicorn ArjunFitnessClub.wsgi --log-file -
